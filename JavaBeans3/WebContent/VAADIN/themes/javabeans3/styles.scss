@@ -1,0 +1,9 @@
+@import "addons.scss";
+@import "javabeans3.scss";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in javabeans3.scss */
+.javabeans3 {
+  @include addons;
+  @include javabeans3;
+}
