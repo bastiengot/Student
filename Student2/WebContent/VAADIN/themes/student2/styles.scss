@@ -1,0 +1,9 @@
+@import "addons.scss";
+@import "student2.scss";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in student2.scss */
+.student2 {
+  @include addons;
+  @include student2;
+}
