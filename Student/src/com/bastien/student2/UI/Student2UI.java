@@ -12,7 +12,7 @@ import com.vaadin.ui.VerticalLayout;
 @Theme("student2")
 public class Student2UI extends UI {
 
-	@Override
+	/*@Override
 	protected void init(VaadinRequest request) {
 		final VerticalLayout layout = new VerticalLayout();
 		layout.setMargin(true);
@@ -25,6 +25,23 @@ public class Student2UI extends UI {
 			}
 		});
 		layout.addComponent(button);
-	}
+	}*/
+	
+	@SuppressWarnings("deprecation")
+	@Override
+    protected void init(VaadinRequest request) {
+        
+        final VerticalLayout layout = new VerticalLayout();
+		layout.setMargin(true);
+		setContent(layout);
+
+        // ----- Title ----- //
+		Label title = new Label("<h1>My Student Application</h1>\nEnter a new student");
+		title.setContentMode(Label.CONTENT_XHTML);
+		layout.addComponent(title);
+		
+        
+        // ----- Content ----- //
+    }
 
 }

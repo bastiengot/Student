@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Stateless
 public class StudentEJB implements StudentEJBRemote {
 
-    @PersistenceContext(unitName = "Student", type = PersistenceContextType.EXTENDED)
     private EntityManager entityManager = Persistence.createEntityManagerFactory("Student").createEntityManager();
     
     @Override
@@ -26,14 +25,14 @@ public class StudentEJB implements StudentEJBRemote {
 
     }
 
-    @Override
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<Student> findStudents() throws Exception {
         Query query = entityManager.createQuery("SELECT s from Student as s");
         return query.getResultList();
     }
     
-    @Override
+	@Override
     public Student findStudent(long id) throws Exception {
     	Query query = entityManager.createQuery("SELECT s from Student as s WHERE id = " + id);
     	return (Student) query.getSingleResult();
